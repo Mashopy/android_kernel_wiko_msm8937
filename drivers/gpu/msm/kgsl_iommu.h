@@ -1,4 +1,4 @@
-/* Copyright (c) 2012-2016, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2012-2016,2018 The Linux Foundation. All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 and
@@ -24,8 +24,6 @@
  * are mapped into all pagetables.
  */
 #define KGSL_IOMMU_GLOBAL_MEM_SIZE	SZ_8M
-// TINNO BEGIN
-// huaidong.tan , CHXZYX-286 , DATE20180423 ,  [PATCH] msm: kgsl: Move global memory region to 0x100000000
 #define KGSL_IOMMU_GLOBAL_MEM_BASE32	0xf8000000
 #define KGSL_IOMMU_GLOBAL_MEM_BASE64	0xfc000000
 
@@ -37,8 +35,6 @@
 #define KGSL_IOMMU_SECURE_END(_mmu) KGSL_IOMMU_GLOBAL_MEM_BASE(_mmu)
 #define KGSL_IOMMU_SECURE_BASE(_mmu)	\
 	(KGSL_IOMMU_GLOBAL_MEM_BASE(_mmu) - KGSL_IOMMU_SECURE_SIZE)
-// TINNO END
-
 #define KGSL_IOMMU_SVM_BASE32		0x300000
 #define KGSL_IOMMU_SVM_END32		(0xC0000000 - SZ_16M)
 
